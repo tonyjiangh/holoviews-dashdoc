@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   Reference Manual — HoloViews
+  </title>
+  <meta content="HoloViews library, documentation site." name="description"/>
+  <meta content="HoloViews contributors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="http://assets.holoviews.org/theme/css/main.css" rel="stylesheet"/>
+  <link href="http://holoviews.org/_static/custom.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="http://holoviews.org/_static/js/main.js">
+  </script>
+  <script src="http://holoviews.org/_static/custom.js">
+  </script>
+  <script src="http://holoviews.org/_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="http://holoviews.org/_static/images/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="index.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="http://holoviews.org/">
+     <img alt="Bokeh Logo" src="http://holoviews.org/_static/images/logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="http://holoviews.org/">
+     HoloViews
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="http://holoviews.org/about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://holoviews.org/gallery/index.html">
+        Gallery
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://holoviews.org/">
+        Docs
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://github.com/ioam/holoviews">
+        Github
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <div class="second-nav">
+   <nav>
+    <ul class="navigation-menu show">
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/getting_started/index.html">
+       Getting started
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/gallery/index.html">
+       Gallery
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="index.html#">
+       API
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="navigation-tools">
+    <div class="search-bar">
+     <form action="http://holoviews.org/search.html" method="get" role="search">
+      <input name="q" placeholder="Search" type="search"/>
+      <button type="submit">
+       <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div class="toc">
+    <ul class="current">
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/index.html">
+       Home
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/getting_started/index.html">
+       Getting Started
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/showcase/index.html">
+       Showcase
+      </a>
+     </li>
+     <li class="toctree-l1 current">
+      <a class="current reference internal" href="index.html">
+       API
+      </a>
+      <ul>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.core.html">
+         core
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.element.html">
+         element
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.interface.html">
+         interface
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.ipython.html">
+         ipython
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.operation.html">
+         operation
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.plotting.html">
+         plotting
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference external" href="http://github.com/ioam/holoviews">
+       Github source
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/about.html">
+       About
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="content">
+    <div class="section" id="reference-manual">
+     <h1>
+      Reference Manual
+      <a class="headerlink" href="index.html#reference-manual" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <p>
+      To learn how to use HoloViews, we recommend that people start with the
+      <a class="reference external" href="http://holoviews.org/Tutorials/index.html">
+       Tutorials
+      </a>
+      , and then use the online help features from within
+IPython Notebook to learn more.  Each option should have corresponding
+tab-completion and help provided, and this is usually enough to
+determine how to use the HoloViews components.
+     </p>
+     <p>
+      Even so, for a truly comprehensive reference to every object in
+HoloViews, we provide this reference manual. The reference manual is
+generated directly from documentation and declarations in the source
+code, and is thus often much more verbose than necessary, because many
+little-used yet often-duplicated methods are listed for each class.
+Still, the reference for a given component does provide a
+comprehensive listing of all attributes and methods, inherited or
+otherwise, which is can be difficult to obtain from the source code
+directly.
+     </p>
+     <hr class="docutils"/>
+     <div class="section" id="module-structure">
+      <h2>
+       Module Structure
+       <a class="headerlink" href="index.html#module-structure" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       <a class="reference external" href="holoviews.html">
+        An overview of all modules within all subpackages of HoloViews.
+       </a>
+      </p>
+      <div class="section" id="holoviews-subpackages">
+       <h3>
+        HoloViews subpackages
+        <a class="headerlink" href="index.html#holoviews-subpackages" title="Permalink to this headline">
+         ¶
+        </a>
+       </h3>
+       <dl class="docutils">
+        <dt>
+         <a class="reference external" href="holoviews.core.html">
+          core
+         </a>
+        </dt>
+        <dd>
+         Base classes implementing the core data structures of HoloViews.
+        </dd>
+        <dt>
+         <a class="reference external" href="holoviews.element.html">
+          element
+         </a>
+        </dt>
+        <dd>
+         Elements that form the basis of more complex visualizations.
+        </dd>
+        <dt>
+         <a class="reference external" href="holoviews.operation.html">
+          operation
+         </a>
+        </dt>
+        <dd>
+         Operations applied to transform existing Elements or other data structures.
+        </dd>
+        <dt>
+         <a class="reference external" href="holoviews.plotting.html">
+          plotting
+         </a>
+        </dt>
+        <dd>
+         Matplotlib-based implementations of plotting for each component type.
+        </dd>
+        <dt>
+         <a class="reference external" href="holoviews.ipython.html">
+          ipython
+         </a>
+        </dt>
+        <dd>
+         Interface to IPython notebook, including magics and display hooks.
+        </dd>
+        <dt>
+         <a class="reference external" href="holoviews.interface.html">
+          interface
+         </a>
+        </dt>
+        <dd>
+         Interfaces to optional external libraries (e.g. Pandas and Seaborn), as
+well as collecting and collating data from an external source.
+        </dd>
+        <dt>
+         <a class="reference external" href="holoviews.html#module-holoviews.testing">
+          testing
+         </a>
+        </dt>
+        <dd>
+         TestComparison classes to compare different component objects.
+        </dd>
+       </dl>
+       <div class="toctree-wrapper compound">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="http://holoviews.org/getting_started/index.html">
+       Getting started
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/gallery/index.html">
+       Gallery
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li>
+      <a href="index.html">
+       API Docs
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="http://gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="http://twitter.com/holoviews">
+       Twitter
+      </a>
+     </li>
+     <li>
+      <a href="http://github.com/ioam/holoviews">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      2017 IOAM: Jean-Luc R. Stevens, Philipp Rudiger, and James A. Bednar
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>

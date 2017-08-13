@@ -1,0 +1,3778 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   holoviews.util Package — HoloViews
+  </title>
+  <meta content="HoloViews library, documentation site." name="description"/>
+  <meta content="HoloViews contributors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="http://assets.holoviews.org/theme/css/main.css" rel="stylesheet"/>
+  <link href="http://holoviews.org/_static/custom.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="http://holoviews.org/_static/js/main.js">
+  </script>
+  <script src="http://holoviews.org/_static/custom.js">
+  </script>
+  <script src="http://holoviews.org/_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="http://holoviews.org/_static/images/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="holoviews.util.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="http://holoviews.org/">
+     <img alt="Bokeh Logo" src="http://holoviews.org/_static/images/logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="http://holoviews.org/">
+     HoloViews
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="http://holoviews.org/about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://holoviews.org/gallery/index.html">
+        Gallery
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://holoviews.org/">
+        Docs
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://github.com/ioam/holoviews">
+        Github
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <div class="second-nav">
+   <nav>
+    <ul class="navigation-menu show">
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/getting_started/index.html">
+       Getting started
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/gallery/index.html">
+       Gallery
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="index.html">
+       API
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="navigation-tools">
+    <div class="search-bar">
+     <form action="http://holoviews.org/search.html" method="get" role="search">
+      <input name="q" placeholder="Search" type="search"/>
+      <button type="submit">
+       <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div class="toc">
+    <ul>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/index.html">
+       Home
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/getting_started/index.html">
+       Getting Started
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/showcase/index.html">
+       Showcase
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="index.html">
+       API
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference external" href="http://github.com/ioam/holoviews">
+       Github source
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/about.html">
+       About
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="content">
+    <div class="section" id="holoviews-util-package">
+     <h1>
+      holoviews.util Package
+      <a class="headerlink" href="holoviews.util.html#holoviews-util-package" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <hr class="docutils"/>
+     <div class="section" id="util-package">
+      <h2>
+       <code class="xref py py-mod docutils literal">
+        <span class="pre">
+         util
+        </span>
+       </code>
+       Package
+       <a class="headerlink" href="holoviews.util.html#util-package" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p class="graphviz">
+       <img alt="Inheritance diagram of holoviews.util" class="inheritance" src="http://holoviews.org/_images/inheritance-0568b843ce9453f7bd9526a4c7dd9b9a5d8cf522.png" usemap="#inheritance7ed2bd6f57"/>
+       <map id="inheritance7ed2bd6f57" name="inheritance7ed2bd6f57">
+        <area alt="" coords="632,5,788,29" href="holoviews.util.html#holoviews.util.Dynamic" id="node1" shape="rect" target="_top" title="Dynamically applies a callable to the Elements in any HoloViews">
+        </area>
+        <area alt="" coords="292,77,581,101" id="node2" shape="rect" title="params(name=String)">
+        </area>
+        <area alt="" coords="629,53,791,77" href="holoviews.util.html#holoviews.util.extension" id="node3" shape="rect" target="_top" title="Helper utility used to load holoviews extensions. These can be">
+        </area>
+        <area alt="" coords="645,101,775,125" href="holoviews.util.html#holoviews.util.opts" id="node4" shape="rect" target="_top" title="Utility function to set options either at the global level or on a">
+        </area>
+        <area alt="" coords="639,149,781,173" href="holoviews.util.html#holoviews.util.output" id="node5" shape="rect" target="_top" title="Helper used to set HoloViews display options.">
+        </area>
+        <area alt="" coords="5,77,244,101" id="node6" shape="rect" title="params(name=String)">
+        </area>
+       </map>
+      </p>
+      <span class="target" id="module-holoviews.util">
+      </span>
+      <dl class="class">
+       <dt id="holoviews.util.Dynamic">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.
+        </code>
+        <code class="descname">
+         Dynamic
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         **params
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util.html#Dynamic">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference external" href="http://ioam.github.io/param/Reference_Manual/param.html#param.parameterized.ParameterizedFunction" title="(in Param v1.4.1)">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            param.parameterized.ParameterizedFunction
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Dynamically applies a callable to the Elements in any HoloViews
+object. Will return a DynamicMap wrapping the original map object,
+which will lazily evaluate when a key is requested. By default
+Dynamic applies a no-op, making it useful for converting HoloMaps
+to a DynamicMap.
+        </p>
+        <p>
+         Any supplied kwargs will be passed to the callable and any streams
+will be instantiated on the returned DynamicMap.
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            shared_data
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=False, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether the cloned DynamicMap will share the same cache.
+         </dd>
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            link_inputs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=True, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          If Dynamic is applied to another DynamicMap, determines whether
+         linked streams attached to its Callable inputs are
+         transferred to the output of the utility.
+
+         For example if the Dynamic utility is applied to a DynamicMap
+         with an RangeXY, this switch determines whether the
+         corresponding visualization should update this stream with
+         range changes originating from the newly generated axes.
+         </dd>
+         <dt>
+          <em>
+           param List
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            streams
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, None), constant=False, default=[], instantiate=True, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          List of streams to attach to the returned DynamicMap
+         </dd>
+         <dt>
+          <em>
+           param Dict
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            kwargs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, constant=False, default={}, instantiate=True, is_instance=True, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Keyword arguments passed to the function.
+         </dd>
+         <dt>
+          <em>
+           param Callable
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            operation
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, constant=False, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Operation or user-defined callable to apply dynamically
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.debug">
+          <code class="descname">
+           debug
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.debug" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a debugging statement.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.defaults">
+          <code class="descname">
+           defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return {parameter_name:parameter.default} for all non-constant
+Parameters.
+          </p>
+          <p>
+           Note that a Parameter for which instantiate==True has its default
+instantiated.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.Dynamic.force_new_dynamic_value">
+          <code class="descname">
+           force_new_dynamic_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.force_new_dynamic_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.get_param_values">
+          <code class="descname">
+           get_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           onlychanged=False
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.get_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return a list of name,value pairs for all Parameters of this
+object.
+          </p>
+          <p>
+           If onlychanged is True, will only return values that are not
+equal to the default value.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.Dynamic.get_value_generator">
+          <code class="descname">
+           get_value_generator
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.get_value_generator" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.Dynamic.inspect_value">
+          <code class="descname">
+           inspect_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.inspect_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.Dynamic.instance">
+          <code class="descname">
+           instance
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.instance" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.message">
+          <code class="descname">
+           message
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.message" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.params">
+          <code class="descname">
+           params
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parameter_name=None
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.params" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return the Parameters of this class as the
+dictionary {name: parameter_object}
+          </p>
+          <p>
+           Includes Parameters from this class and its
+superclasses.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.pprint">
+          <code class="descname">
+           pprint
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=None
+          </em>
+          ,
+          <em>
+           prefix='\n    '
+          </em>
+          ,
+          <em>
+           unknown_value='&lt;?&gt;'
+          </em>
+          ,
+          <em>
+           qualify=False
+          </em>
+          ,
+          <em>
+           separator=''
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.pprint" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.pprint, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.print_param_defaults">
+          <code class="descname">
+           print_param_defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.print_param_defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the default values of all cls’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.print_param_values">
+          <code class="descname">
+           print_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.print_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the values of all this object’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.script_repr">
+          <code class="descname">
+           script_repr
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=[]
+          </em>
+          ,
+          <em>
+           prefix='    '
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.script_repr" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.set_default">
+          <code class="descname">
+           set_default
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           param_name
+          </em>
+          ,
+          <em>
+           value
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.set_default" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Set the default value of param_name.
+          </p>
+          <p>
+           Equivalent to setting param_name on the class.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.Dynamic.set_dynamic_time_fn">
+          <code class="descname">
+           set_dynamic_time_fn
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.set_dynamic_time_fn" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.Dynamic.set_param">
+          <code class="descname">
+           set_param
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.set_param" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.state_pop">
+          <code class="descname">
+           state_pop
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.state_pop" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Restore the most recently saved state.
+          </p>
+          <p>
+           See state_push() for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.state_push">
+          <code class="descname">
+           state_push
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.state_push" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Save this instance’s state.
+          </p>
+          <p>
+           For Parameterized instances, this includes the state of
+dynamically generated values.
+          </p>
+          <p>
+           Subclasses that maintain short-term state should additionally
+save and restore that state using state_push() and
+state_pop().
+          </p>
+          <p>
+           Generally, this method is used by operations that need to test
+something without permanently altering the objects’ state.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.verbose">
+          <code class="descname">
+           verbose
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.verbose" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a verbose message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.Dynamic.warning">
+          <code class="descname">
+           warning
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.Dynamic.warning" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a warning, unless module variable
+warnings_as_exceptions is True, then raise an Exception
+containing the arguments.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="function">
+       <dt id="holoviews.util.examples">
+        <code class="descclassname">
+         holoviews.util.
+        </code>
+        <code class="descname">
+         examples
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         path='holoviews-examples'
+        </em>
+        ,
+        <em>
+         verbose=False
+        </em>
+        ,
+        <em>
+         force=False
+        </em>
+        ,
+        <em>
+         root='/Users/philippjfr/holoviews/holoviews/util/__init__.pyc'
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util.html#examples">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.examples" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Copies the notebooks to the supplied path.
+        </p>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.util.extension">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.
+        </code>
+        <code class="descname">
+         extension
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         **params
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util.html#extension">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.extension" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference external" href="http://ioam.github.io/param/Reference_Manual/param.html#param.parameterized.ParameterizedFunction" title="(in Param v1.4.1)">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            param.parameterized.ParameterizedFunction
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Helper utility used to load holoviews extensions. These can be
+plotting extensions, element extensions or anything else that can be
+registered to work with HoloViews.
+        </p>
+        <dl class="method">
+         <dt id="holoviews.util.extension.debug">
+          <code class="descname">
+           debug
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.debug" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a debugging statement.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.defaults">
+          <code class="descname">
+           defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return {parameter_name:parameter.default} for all non-constant
+Parameters.
+          </p>
+          <p>
+           Note that a Parameter for which instantiate==True has its default
+instantiated.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.extension.force_new_dynamic_value">
+          <code class="descname">
+           force_new_dynamic_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.force_new_dynamic_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.get_param_values">
+          <code class="descname">
+           get_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           onlychanged=False
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.get_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return a list of name,value pairs for all Parameters of this
+object.
+          </p>
+          <p>
+           If onlychanged is True, will only return values that are not
+equal to the default value.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.extension.get_value_generator">
+          <code class="descname">
+           get_value_generator
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.get_value_generator" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.extension.inspect_value">
+          <code class="descname">
+           inspect_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.inspect_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.extension.instance">
+          <code class="descname">
+           instance
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.instance" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.message">
+          <code class="descname">
+           message
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.message" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.params">
+          <code class="descname">
+           params
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parameter_name=None
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.params" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return the Parameters of this class as the
+dictionary {name: parameter_object}
+          </p>
+          <p>
+           Includes Parameters from this class and its
+superclasses.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.pprint">
+          <code class="descname">
+           pprint
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=None
+          </em>
+          ,
+          <em>
+           prefix='\n    '
+          </em>
+          ,
+          <em>
+           unknown_value='&lt;?&gt;'
+          </em>
+          ,
+          <em>
+           qualify=False
+          </em>
+          ,
+          <em>
+           separator=''
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.pprint" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.pprint, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.print_param_defaults">
+          <code class="descname">
+           print_param_defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.print_param_defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the default values of all cls’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.print_param_values">
+          <code class="descname">
+           print_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.print_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the values of all this object’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.script_repr">
+          <code class="descname">
+           script_repr
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=[]
+          </em>
+          ,
+          <em>
+           prefix='    '
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.script_repr" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.set_default">
+          <code class="descname">
+           set_default
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           param_name
+          </em>
+          ,
+          <em>
+           value
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.set_default" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Set the default value of param_name.
+          </p>
+          <p>
+           Equivalent to setting param_name on the class.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.extension.set_dynamic_time_fn">
+          <code class="descname">
+           set_dynamic_time_fn
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.set_dynamic_time_fn" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.extension.set_param">
+          <code class="descname">
+           set_param
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.set_param" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.state_pop">
+          <code class="descname">
+           state_pop
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.state_pop" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Restore the most recently saved state.
+          </p>
+          <p>
+           See state_push() for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.state_push">
+          <code class="descname">
+           state_push
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.state_push" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Save this instance’s state.
+          </p>
+          <p>
+           For Parameterized instances, this includes the state of
+dynamically generated values.
+          </p>
+          <p>
+           Subclasses that maintain short-term state should additionally
+save and restore that state using state_push() and
+state_pop().
+          </p>
+          <p>
+           Generally, this method is used by operations that need to test
+something without permanently altering the objects’ state.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.verbose">
+          <code class="descname">
+           verbose
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.verbose" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a verbose message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.extension.warning">
+          <code class="descname">
+           warning
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.extension.warning" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a warning, unless module variable
+warnings_as_exceptions is True, then raise an Exception
+containing the arguments.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.util.opts">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.
+        </code>
+        <code class="descname">
+         opts
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         **params
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util.html#opts">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.opts" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference external" href="http://ioam.github.io/param/Reference_Manual/param.html#param.parameterized.ParameterizedFunction" title="(in Param v1.4.1)">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            param.parameterized.ParameterizedFunction
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Utility function to set options either at the global level or on a
+specific object.
+        </p>
+        <p>
+         To set opts globally use:
+        </p>
+        <p>
+         opts(options)
+        </p>
+        <p>
+         Where options may be an options specification string (as accepted by
+the %opts magic) or an options specifications dictionary.
+        </p>
+        <p>
+         For instance:
+        </p>
+        <p>
+         opts(“Curve (color=’k’)”) # Or equivalently
+opts({‘Curve’: {‘style’: {‘color’:’k’}}})
+        </p>
+        <p>
+         To set opts on a specific object, just supply it as the second
+argument:
+        </p>
+        <p>
+         opts(options, obj)
+        </p>
+        <p>
+         For instance:
+        </p>
+        <p>
+         curve = hv.Curve([1,2,3])
+opts(“Curve (color=’k’)”, curve) # Or equivalently
+opts({‘Curve’: {‘style’: {‘color’:’k’}}}, curve)
+        </p>
+        <p>
+         These two modes are equivalent to the %opts line magic and the
+%%opts cell magic respectively.
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            strict
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=False, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to be strict about the options specification. If not set
+       to strict (default), any invalid keywords are simply skipped. If
+       strict, invalid keywords prevent the options being applied.
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.debug">
+          <code class="descname">
+           debug
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.debug" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a debugging statement.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.defaults">
+          <code class="descname">
+           defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return {parameter_name:parameter.default} for all non-constant
+Parameters.
+          </p>
+          <p>
+           Note that a Parameter for which instantiate==True has its default
+instantiated.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.opts.force_new_dynamic_value">
+          <code class="descname">
+           force_new_dynamic_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.force_new_dynamic_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.get_param_values">
+          <code class="descname">
+           get_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           onlychanged=False
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.get_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return a list of name,value pairs for all Parameters of this
+object.
+          </p>
+          <p>
+           If onlychanged is True, will only return values that are not
+equal to the default value.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.opts.get_value_generator">
+          <code class="descname">
+           get_value_generator
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.get_value_generator" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.opts.inspect_value">
+          <code class="descname">
+           inspect_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.inspect_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.opts.instance">
+          <code class="descname">
+           instance
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.instance" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.message">
+          <code class="descname">
+           message
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.message" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.params">
+          <code class="descname">
+           params
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parameter_name=None
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.params" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return the Parameters of this class as the
+dictionary {name: parameter_object}
+          </p>
+          <p>
+           Includes Parameters from this class and its
+superclasses.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.pprint">
+          <code class="descname">
+           pprint
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=None
+          </em>
+          ,
+          <em>
+           prefix='\n    '
+          </em>
+          ,
+          <em>
+           unknown_value='&lt;?&gt;'
+          </em>
+          ,
+          <em>
+           qualify=False
+          </em>
+          ,
+          <em>
+           separator=''
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.pprint" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.pprint, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.print_param_defaults">
+          <code class="descname">
+           print_param_defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.print_param_defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the default values of all cls’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.print_param_values">
+          <code class="descname">
+           print_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.print_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the values of all this object’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.script_repr">
+          <code class="descname">
+           script_repr
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=[]
+          </em>
+          ,
+          <em>
+           prefix='    '
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.script_repr" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.set_default">
+          <code class="descname">
+           set_default
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           param_name
+          </em>
+          ,
+          <em>
+           value
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.set_default" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Set the default value of param_name.
+          </p>
+          <p>
+           Equivalent to setting param_name on the class.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.opts.set_dynamic_time_fn">
+          <code class="descname">
+           set_dynamic_time_fn
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.set_dynamic_time_fn" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.opts.set_param">
+          <code class="descname">
+           set_param
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.set_param" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.state_pop">
+          <code class="descname">
+           state_pop
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.state_pop" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Restore the most recently saved state.
+          </p>
+          <p>
+           See state_push() for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.state_push">
+          <code class="descname">
+           state_push
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.state_push" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Save this instance’s state.
+          </p>
+          <p>
+           For Parameterized instances, this includes the state of
+dynamically generated values.
+          </p>
+          <p>
+           Subclasses that maintain short-term state should additionally
+save and restore that state using state_push() and
+state_pop().
+          </p>
+          <p>
+           Generally, this method is used by operations that need to test
+something without permanently altering the objects’ state.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.verbose">
+          <code class="descname">
+           verbose
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.verbose" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a verbose message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.opts.warning">
+          <code class="descname">
+           warning
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.opts.warning" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a warning, unless module variable
+warnings_as_exceptions is True, then raise an Exception
+containing the arguments.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.util.output">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.
+        </code>
+        <code class="descname">
+         output
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         **params
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util.html#output">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.output" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference external" href="http://ioam.github.io/param/Reference_Manual/param.html#param.parameterized.ParameterizedFunction" title="(in Param v1.4.1)">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            param.parameterized.ParameterizedFunction
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Helper used to set HoloViews display options.
+Arguments are supplied as a series of keywords in any order:
+        </p>
+        <p>
+         backend      : The backend used by HoloViews
+fig          : The static figure format
+holomap      : The display type for holomaps
+widgets      : The widget mode for widgets
+fps          : The frames per second used for animations
+max_frames   : The max number of frames rendered (default 500)
+size         : The percentage size of displayed output
+dpi          : The rendered dpi of the figure
+charwidth    : The max character width for displaying helper (default 80)
+filename    : The filename of the saved output, if any (default None)
+info    : The information to page about the displayed objects (default False)
+css     : Optional css style attributes to apply to the figure image tag
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            filename_warning
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=True, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to warn if the output utility is called on an object and
+       a filename is not given (in which case the utility has no
+       effect)
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.debug">
+          <code class="descname">
+           debug
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.debug" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a debugging statement.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.defaults">
+          <code class="descname">
+           defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return {parameter_name:parameter.default} for all non-constant
+Parameters.
+          </p>
+          <p>
+           Note that a Parameter for which instantiate==True has its default
+instantiated.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.output.force_new_dynamic_value">
+          <code class="descname">
+           force_new_dynamic_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.force_new_dynamic_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.get_param_values">
+          <code class="descname">
+           get_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           onlychanged=False
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.get_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return a list of name,value pairs for all Parameters of this
+object.
+          </p>
+          <p>
+           If onlychanged is True, will only return values that are not
+equal to the default value.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.output.get_value_generator">
+          <code class="descname">
+           get_value_generator
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.get_value_generator" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.output.inspect_value">
+          <code class="descname">
+           inspect_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.inspect_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.output.instance">
+          <code class="descname">
+           instance
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.instance" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.message">
+          <code class="descname">
+           message
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.message" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.params">
+          <code class="descname">
+           params
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parameter_name=None
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.params" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return the Parameters of this class as the
+dictionary {name: parameter_object}
+          </p>
+          <p>
+           Includes Parameters from this class and its
+superclasses.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.pprint">
+          <code class="descname">
+           pprint
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=None
+          </em>
+          ,
+          <em>
+           prefix='\n    '
+          </em>
+          ,
+          <em>
+           unknown_value='&lt;?&gt;'
+          </em>
+          ,
+          <em>
+           qualify=False
+          </em>
+          ,
+          <em>
+           separator=''
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.pprint" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.pprint, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.print_param_defaults">
+          <code class="descname">
+           print_param_defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.print_param_defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the default values of all cls’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.print_param_values">
+          <code class="descname">
+           print_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.print_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the values of all this object’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.script_repr">
+          <code class="descname">
+           script_repr
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=[]
+          </em>
+          ,
+          <em>
+           prefix='    '
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.script_repr" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Same as Parameterized.script_repr, except that X.classname(Y
+is replaced with X.classname.instance(Y
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.set_default">
+          <code class="descname">
+           set_default
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           param_name
+          </em>
+          ,
+          <em>
+           value
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.set_default" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Set the default value of param_name.
+          </p>
+          <p>
+           Equivalent to setting param_name on the class.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.output.set_dynamic_time_fn">
+          <code class="descname">
+           set_dynamic_time_fn
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.set_dynamic_time_fn" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.util.output.set_param">
+          <code class="descname">
+           set_param
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.set_param" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.state_pop">
+          <code class="descname">
+           state_pop
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.state_pop" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Restore the most recently saved state.
+          </p>
+          <p>
+           See state_push() for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.state_push">
+          <code class="descname">
+           state_push
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.state_push" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Save this instance’s state.
+          </p>
+          <p>
+           For Parameterized instances, this includes the state of
+dynamically generated values.
+          </p>
+          <p>
+           Subclasses that maintain short-term state should additionally
+save and restore that state using state_push() and
+state_pop().
+          </p>
+          <p>
+           Generally, this method is used by operations that need to test
+something without permanently altering the objects’ state.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.verbose">
+          <code class="descname">
+           verbose
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.verbose" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a verbose message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.output.warning">
+          <code class="descname">
+           warning
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.output.warning" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a warning, unless module variable
+warnings_as_exceptions is True, then raise an Exception
+containing the arguments.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="function">
+       <dt id="holoviews.util.renderer">
+        <code class="descclassname">
+         holoviews.util.
+        </code>
+        <code class="descname">
+         renderer
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         name
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util.html#renderer">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.renderer" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Helper utility to access the active renderer for a given extension.
+        </p>
+       </dd>
+      </dl>
+     </div>
+     <hr class="docutils"/>
+     <div class="section" id="command-module">
+      <h2>
+       <code class="xref py py-mod docutils literal">
+        <span class="pre">
+         command
+        </span>
+       </code>
+       Module
+       <a class="headerlink" href="holoviews.util.html#command-module" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <span class="target" id="module-holoviews.util.command">
+      </span>
+      <p>
+       python -m holoviews.util.command Conversion_Example.ipynb
+OR
+holoviews Conversion_Example.ipynb
+      </p>
+     </div>
+     <hr class="docutils"/>
+     <div class="section" id="parser-module">
+      <h2>
+       <a class="reference external" href="http://docs.python.org/library/parser.html#module-parser" title="(in Python v2.7)">
+        <code class="xref py py-mod docutils literal">
+         <span class="pre">
+          parser
+         </span>
+        </code>
+       </a>
+       Module
+       <a class="headerlink" href="holoviews.util.html#parser-module" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p class="graphviz">
+       <img alt="Inheritance diagram of holoviews.util.parser" class="inheritance" src="http://holoviews.org/_images/inheritance-9dec69d6682d6a568cc5df7a1f690f21cb302ca5.png" usemap="#inheritance7bb7407369"/>
+       <map id="inheritance7bb7407369" name="inheritance7bb7407369">
+        <area alt="" coords="292,53,535,77" href="holoviews.util.html#holoviews.util.parser.CompositorSpec" id="node1" shape="rect" target="_top" title="The syntax for defining a set of compositor is as follows:">
+        </area>
+        <area alt="" coords="32,77,217,101" href="holoviews.util.html#holoviews.util.parser.Parser" id="node2" shape="rect" target="_top" title="Base class for magic line parsers, designed for forgiving parsing">
+        </area>
+        <area alt="" coords="312,101,515,125" href="holoviews.util.html#holoviews.util.parser.OptsSpec" id="node3" shape="rect" target="_top" title="An OptsSpec is a string specification that describes an">
+        </area>
+        <area alt="" coords="5,5,244,29" id="node5" shape="rect" title="params(name=String)">
+        </area>
+       </map>
+      </p>
+      <span class="target" id="module-holoviews.util.parser">
+      </span>
+      <p>
+       The magics offered by the HoloViews IPython extension are powerful and
+support rich, compositional specifications. To avoid the the brittle,
+convoluted code that results from trying to support the syntax in pure
+Python, this file defines suitable parsers using pyparsing that are
+cleaner and easier to understand.
+      </p>
+      <p>
+       Pyparsing is required by matplotlib and will therefore be available if
+HoloViews is being used in conjunction with matplotlib.
+      </p>
+      <dl class="class">
+       <dt id="holoviews.util.parser.CompositorSpec">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.parser.
+        </code>
+        <code class="descname">
+         CompositorSpec
+        </code>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#CompositorSpec">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.CompositorSpec" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference internal" href="holoviews.util.html#holoviews.util.parser.Parser" title="holoviews.util.parser.Parser">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            holoviews.util.parser.Parser
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         The syntax for defining a set of compositor is as follows:
+        </p>
+        <p>
+         [ mode op(spec) [settings] value ]+
+        </p>
+        <p>
+         The components are:
+        </p>
+        <p>
+         mode      : Operation mode, either ‘data’ or ‘display’.
+group     : Value identifier with capitalized initial letter.
+op        : The name of the operation to apply.
+spec      : Overlay specification of form (A * B) where A and B are
+        </p>
+        <blockquote>
+         <div>
+          dotted path specifications.
+         </div>
+        </blockquote>
+        <dl class="docutils">
+         <dt>
+          settings
+          <span class="classifier-delimiter">
+           :
+          </span>
+          <span class="classifier">
+           Optional list of keyword arguments to be used as
+          </span>
+         </dt>
+         <dd>
+          parameters to the operation (in square brackets).
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.parser.CompositorSpec.collect_tokens">
+          <code class="descname">
+           collect_tokens
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parseresult
+          </em>
+          ,
+          <em>
+           mode
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.CompositorSpec.collect_tokens" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Collect the tokens from a (potentially) nested parse result.
+          </p>
+         </dd>
+        </dl>
+        <dl class="classmethod">
+         <dt id="holoviews.util.parser.CompositorSpec.parse">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           parse
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           line
+          </em>
+          ,
+          <em>
+           ns={}
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#CompositorSpec.parse">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.CompositorSpec.parse" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Parse compositor specifications, returning a list Compositors
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.parser.CompositorSpec.todict">
+          <code class="descname">
+           todict
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parseresult
+          </em>
+          ,
+          <em>
+           mode='parens'
+          </em>
+          ,
+          <em>
+           ns={}
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.CompositorSpec.todict" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Helper function to return dictionary given the parse results
+from a pyparsing.nestedExpr object (containing keywords).
+          </p>
+          <p>
+           The ns is a dynamic namespace (typically the IPython Notebook
+namespace) used to update the class-level namespace.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.util.parser.OptsSpec">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.parser.
+        </code>
+        <code class="descname">
+         OptsSpec
+        </code>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#OptsSpec">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.OptsSpec" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference internal" href="holoviews.util.html#holoviews.util.parser.Parser" title="holoviews.util.parser.Parser">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            holoviews.util.parser.Parser
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         An OptsSpec is a string specification that describes an
+OptionTree. It is a list of tree path specifications (using dotted
+syntax) separated by keyword lists for any of the style, plotting
+or normalization options. These keyword lists are denoted
+‘plot(..)’, ‘style(...)’ and ‘norm(...)’  respectively.  These
+three groups may be specified even more concisely using keyword
+lists delimited by square brackets, parentheses and braces
+respectively.  All these sets are optional and may be supplied in
+any order.
+        </p>
+        <p>
+         For instance, the following string:
+        </p>
+        <p>
+         Image (interpolation=None) plot(show_title=False) Curve style(color=’r’)
+        </p>
+        <p>
+         Would specify an OptionTree where Image has “interpolation=None”
+for style and ‘show_title=False’ for plot options. The Curve has a
+style set such that color=’r’.
+        </p>
+        <p>
+         The parser is fairly forgiving; commas between keywords are
+optional and additional spaces are often allowed. The only
+restriction is that keywords
+         <em>
+          must
+         </em>
+         be immediately followed by the
+‘=’ sign (no space).
+        </p>
+        <dl class="classmethod">
+         <dt id="holoviews.util.parser.OptsSpec.apply_deprecations">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           apply_deprecations
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           path
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#OptsSpec.apply_deprecations">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.OptsSpec.apply_deprecations" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Convert any potentially deprecated paths and issue appropriate warnings
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.parser.OptsSpec.collect_tokens">
+          <code class="descname">
+           collect_tokens
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parseresult
+          </em>
+          ,
+          <em>
+           mode
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.OptsSpec.collect_tokens" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Collect the tokens from a (potentially) nested parse result.
+          </p>
+         </dd>
+        </dl>
+        <dl class="classmethod">
+         <dt id="holoviews.util.parser.OptsSpec.parse">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           parse
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           line
+          </em>
+          ,
+          <em>
+           ns={}
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#OptsSpec.parse">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.OptsSpec.parse" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Parse an options specification, returning a dictionary with
+path keys and {‘plot’:&lt;options&gt;, ‘style’:&lt;options&gt;} values.
+          </p>
+         </dd>
+        </dl>
+        <dl class="classmethod">
+         <dt id="holoviews.util.parser.OptsSpec.process_normalization">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           process_normalization
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parse_group
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#OptsSpec.process_normalization">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.OptsSpec.process_normalization" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Given a normalization parse group (i.e. the contents of the
+braces), validate the option list and compute the appropriate
+integer value for the normalization plotting option.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.parser.OptsSpec.todict">
+          <code class="descname">
+           todict
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parseresult
+          </em>
+          ,
+          <em>
+           mode='parens'
+          </em>
+          ,
+          <em>
+           ns={}
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.OptsSpec.todict" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Helper function to return dictionary given the parse results
+from a pyparsing.nestedExpr object (containing keywords).
+          </p>
+          <p>
+           The ns is a dynamic namespace (typically the IPython Notebook
+namespace) used to update the class-level namespace.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.util.parser.Parser">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.parser.
+        </code>
+        <code class="descname">
+         Parser
+        </code>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#Parser">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.Parser" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            object
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Base class for magic line parsers, designed for forgiving parsing
+of keyword lists.
+        </p>
+        <dl class="classmethod">
+         <dt id="holoviews.util.parser.Parser.collect_tokens">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           collect_tokens
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parseresult
+          </em>
+          ,
+          <em>
+           mode
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#Parser.collect_tokens">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.Parser.collect_tokens" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Collect the tokens from a (potentially) nested parse result.
+          </p>
+         </dd>
+        </dl>
+        <dl class="classmethod">
+         <dt id="holoviews.util.parser.Parser.todict">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           todict
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parseresult
+          </em>
+          ,
+          <em>
+           mode='parens'
+          </em>
+          ,
+          <em>
+           ns={}
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/parser.html#Parser.todict">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.parser.Parser.todict" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Helper function to return dictionary given the parse results
+from a pyparsing.nestedExpr object (containing keywords).
+          </p>
+          <p>
+           The ns is a dynamic namespace (typically the IPython Notebook
+namespace) used to update the class-level namespace.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+     </div>
+     <hr class="docutils"/>
+     <div class="section" id="settings-module">
+      <h2>
+       <code class="xref py py-mod docutils literal">
+        <span class="pre">
+         settings
+        </span>
+       </code>
+       Module
+       <a class="headerlink" href="holoviews.util.html#settings-module" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p class="graphviz">
+       <img alt="Inheritance diagram of holoviews.util.settings" class="inheritance" src="http://holoviews.org/_images/inheritance-5b5801df63c601ef9974654dbb1d87d099009bc7.png" usemap="#inheritance159927ddf8"/>
+       <map id="inheritance159927ddf8" name="inheritance159927ddf8">
+        <area alt="" coords="5,5,259,29" href="holoviews.util.html#holoviews.util.settings.KeywordSettings" id="node1" shape="rect" target="_top" title="Base class for options settings used to specified collections of">
+        </area>
+        <area alt="" coords="307,5,550,29" href="holoviews.util.html#holoviews.util.settings.OutputSettings" id="node2" shape="rect" target="_top" title="Class for controlling display and output settings.">
+        </area>
+       </map>
+      </p>
+      <span class="target" id="module-holoviews.util.settings">
+      </span>
+      <dl class="class">
+       <dt id="holoviews.util.settings.KeywordSettings">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.settings.
+        </code>
+        <code class="descname">
+         KeywordSettings
+        </code>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/settings.html#KeywordSettings">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.KeywordSettings" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            object
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Base class for options settings used to specified collections of
+keyword options.
+        </p>
+        <dl class="classmethod">
+         <dt id="holoviews.util.settings.KeywordSettings.extract_keywords">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           extract_keywords
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           line
+          </em>
+          ,
+          <em>
+           items
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/settings.html#KeywordSettings.extract_keywords">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.KeywordSettings.extract_keywords" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Given the keyword string, parse a dictionary of options.
+          </p>
+         </dd>
+        </dl>
+        <dl class="classmethod">
+         <dt id="holoviews.util.settings.KeywordSettings.get_options">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           get_options
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           items
+          </em>
+          ,
+          <em>
+           options
+          </em>
+          ,
+          <em>
+           warnfn
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/settings.html#KeywordSettings.get_options">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.KeywordSettings.get_options" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Given a keyword specification, validate and compute options
+          </p>
+         </dd>
+        </dl>
+        <dl class="classmethod">
+         <dt id="holoviews.util.settings.KeywordSettings.update_options">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           update_options
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           options
+          </em>
+          ,
+          <em>
+           items
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/settings.html#KeywordSettings.update_options">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.KeywordSettings.update_options" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Allows updating options depending on class attributes
+and unvalidated options.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.util.settings.OutputSettings">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.util.settings.
+        </code>
+        <code class="descname">
+         OutputSettings
+        </code>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/settings.html#OutputSettings">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.OutputSettings" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference internal" href="holoviews.util.html#holoviews.util.settings.KeywordSettings" title="holoviews.util.settings.KeywordSettings">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            holoviews.util.settings.KeywordSettings
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Class for controlling display and output settings.
+        </p>
+        <dl class="method">
+         <dt id="holoviews.util.settings.OutputSettings.extract_keywords">
+          <code class="descname">
+           extract_keywords
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           line
+          </em>
+          ,
+          <em>
+           items
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.OutputSettings.extract_keywords" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Given the keyword string, parse a dictionary of options.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.util.settings.OutputSettings.get_options">
+          <code class="descname">
+           get_options
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           items
+          </em>
+          ,
+          <em>
+           options
+          </em>
+          ,
+          <em>
+           warnfn
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.OutputSettings.get_options" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Given a keyword specification, validate and compute options
+          </p>
+         </dd>
+        </dl>
+        <dl class="classmethod">
+         <dt id="holoviews.util.settings.OutputSettings.update_options">
+          <em class="property">
+           classmethod
+          </em>
+          <code class="descname">
+           update_options
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           options
+          </em>
+          ,
+          <em>
+           items
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/settings.html#OutputSettings.update_options">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.OutputSettings.update_options" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Switch default options and backend if new backend is supplied in
+items.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="function">
+       <dt id="holoviews.util.settings.list_formats">
+        <code class="descclassname">
+         holoviews.util.settings.
+        </code>
+        <code class="descname">
+         list_formats
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         format_type
+        </em>
+        ,
+        <em>
+         backend=None
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/util/settings.html#list_formats">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.util.html#holoviews.util.settings.list_formats" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Returns list of supported formats for a particular
+backend.
+        </p>
+       </dd>
+      </dl>
+      <hr class="docutils"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="http://holoviews.org/getting_started/index.html">
+       Getting started
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/gallery/index.html">
+       Gallery
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li>
+      <a href="index.html">
+       API Docs
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="http://gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="http://twitter.com/holoviews">
+       Twitter
+      </a>
+     </li>
+     <li>
+      <a href="http://github.com/ioam/holoviews">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      2017 IOAM: Jean-Luc R. Stevens, Philipp Rudiger, and James A. Bednar
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>

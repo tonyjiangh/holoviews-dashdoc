@@ -1,0 +1,2767 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   holoviews.widgets Package — HoloViews
+  </title>
+  <meta content="HoloViews library, documentation site." name="description"/>
+  <meta content="HoloViews contributors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="http://assets.holoviews.org/theme/css/main.css" rel="stylesheet"/>
+  <link href="http://holoviews.org/_static/custom.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="http://holoviews.org/_static/js/main.js">
+  </script>
+  <script src="http://holoviews.org/_static/custom.js">
+  </script>
+  <script src="http://holoviews.org/_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="http://holoviews.org/_static/images/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="holoviews.plotting.widgets.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="http://holoviews.org/">
+     <img alt="Bokeh Logo" src="http://holoviews.org/_static/images/logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="http://holoviews.org/">
+     HoloViews
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="http://holoviews.org/about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://holoviews.org/gallery/index.html">
+        Gallery
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://holoviews.org/">
+        Docs
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="http://github.com/ioam/holoviews">
+        Github
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <div class="second-nav">
+   <nav>
+    <ul class="navigation-menu show">
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/getting_started/index.html">
+       Getting started
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/gallery/index.html">
+       Gallery
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="index.html">
+       API
+      </a>
+     </li>
+     <li class="nav-link doc-head">
+      <a href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="navigation-tools">
+    <div class="search-bar">
+     <form action="http://holoviews.org/search.html" method="get" role="search">
+      <input name="q" placeholder="Search" type="search"/>
+      <button type="submit">
+       <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div class="toc">
+    <ul class="current">
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/index.html">
+       Home
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/getting_started/index.html">
+       Getting Started
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/showcase/index.html">
+       Showcase
+      </a>
+     </li>
+     <li class="toctree-l1 current">
+      <a class="reference internal" href="index.html">
+       API
+      </a>
+      <ul class="current">
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.core.html">
+         core
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.element.html">
+         element
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.interface.html">
+         interface
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.ipython.html">
+         ipython
+        </a>
+       </li>
+       <li class="toctree-l2">
+        <a class="reference internal" href="holoviews.operation.html">
+         operation
+        </a>
+       </li>
+       <li class="toctree-l2 current">
+        <a class="reference internal" href="holoviews.plotting.html">
+         plotting
+        </a>
+        <ul class="current">
+         <li class="toctree-l3">
+          <a class="reference internal" href="holoviews.plotting.bokeh.html">
+           holoviews.bokeh Package
+          </a>
+         </li>
+         <li class="toctree-l3">
+          <a class="reference internal" href="holoviews.plotting.mpl.html">
+           holoviews.mpl Package
+          </a>
+         </li>
+         <li class="toctree-l3">
+          <a class="reference internal" href="holoviews.plotting.plotly.html">
+           holoviews.plotly Package
+          </a>
+         </li>
+         <li class="toctree-l3 current">
+          <a class="current reference internal" href="holoviews.plotting.widgets.html">
+           holoviews.widgets Package
+          </a>
+          <ul class="simple">
+          </ul>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference external" href="http://github.com/ioam/holoviews">
+       Github source
+      </a>
+     </li>
+     <li class="toctree-l1">
+      <a class="reference internal" href="http://holoviews.org/about.html">
+       About
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="content">
+    <div class="section" id="holoviews-widgets-package">
+     <h1>
+      holoviews.widgets Package
+      <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews-widgets-package" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <hr class="docutils"/>
+     <div class="section" id="widgets-package">
+      <h2>
+       <code class="xref py py-mod docutils literal">
+        <span class="pre">
+         widgets
+        </span>
+       </code>
+       Package
+       <a class="headerlink" href="holoviews.plotting.widgets.html#widgets-package" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p class="graphviz">
+       <img alt="Inheritance diagram of holoviews.plotting.widgets" class="inheritance" src="http://holoviews.org/_images/inheritance-eb2b156bff3110f526e748a83699ad9bbfea84e2.png" usemap="#inheritancee1e5c697f8"/>
+       <map id="inheritancee1e5c697f8" name="inheritancee1e5c697f8">
+        <area alt="" coords="292,29,530,53" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget" id="node1" shape="rect" target="_top" title="NdWidget is an abstract base class implementing a method to find">
+        </area>
+        <area alt="" coords="578,5,853,29" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget" id="node3" shape="rect" target="_top" title="ScrubberWidget generates a basic animation widget with a slider">
+        </area>
+        <area alt="" coords="578,53,853,77" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget" id="node4" shape="rect" target="_top" title="Javascript based widget to select and view ViewableElement objects">
+        </area>
+        <area alt="" coords="5,29,244,53" id="node2" shape="rect" title="params(name=String)">
+        </area>
+       </map>
+      </p>
+      <span class="target" id="module-holoviews.plotting.widgets">
+      </span>
+      <dl class="class">
+       <dt id="holoviews.plotting.widgets.NdWidget">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.plotting.widgets.
+        </code>
+        <code class="descname">
+         NdWidget
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         plot
+        </em>
+        ,
+        <em>
+         renderer=None
+        </em>
+        ,
+        <em>
+         **params
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/plotting/widgets.html#NdWidget">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference external" href="http://ioam.github.io/param/Reference_Manual/param.html#param.parameterized.Parameterized" title="(in Param v1.4.1)">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            param.parameterized.Parameterized
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         NdWidget is an abstract base class implementing a method to find
+the dimensions and keys of any ViewableElement, GridSpace or
+UniformNdMapping type.  In the process it creates a mock_obj to
+hold the dimensions and keys.
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param Dict
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            display_options
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, constant=False, default={}, instantiate=True, is_instance=True, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          The display options used to generate individual frames
+         </dd>
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            export_json
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=False, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to export
+         plots as json files, which can be dynamically loaded through
+         a callback from the slider.
+         </dd>
+        </dl>
+        <p>
+         <em>
+          param Dict
+         </em>
+         <code class="docutils literal">
+          <span class="pre">
+           CDN
+          </span>
+         </code>
+         (
+         <em>
+          allow_None=False, constant=False, default={u’jQueryUI’: u’https://code.jquery.com/ui/1.10.4/jquery-ui.min.js’, u’underscore’: u’https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js’}, instantiate=True, is_instance=True, pickle_default_value=True, precedence=None, readonly=False
+         </em>
+         )
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            extensionjs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Optional javascript extension file for a particular backend.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            json_load_path
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          If export_json is enabled the widget JS code will load the data
+         from this path, if None defaults to json_save_path. For loading
+         the data from within the notebook the path must be relative,
+         when exporting the notebook the path can be set to another
+         location like a webserver where the json files can be uploaded to.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            css
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Defines the local CSS file to be loaded for this widget.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            basejs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=widgets.js, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          JS file containing javascript baseclasses for the widget.
+         </dd>
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            embed
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=True, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to embed all plots in the Javascript, generating
+        a static widget not dependent on the IPython server.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            json_save_path
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=./json_figures, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          If export_json is enabled the widget will save the json
+         data to this path. If None data will be accessible via the
+         json_data attribute.
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.debug">
+          <code class="descname">
+           debug
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.debug" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a debugging statement.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.defaults">
+          <code class="descname">
+           defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return {parameter_name:parameter.default} for all non-constant
+Parameters.
+          </p>
+          <p>
+           Note that a Parameter for which instantiate==True has its default
+instantiated.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.NdWidget.force_new_dynamic_value">
+          <code class="descname">
+           force_new_dynamic_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.force_new_dynamic_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.get_param_values">
+          <code class="descname">
+           get_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           onlychanged=False
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.get_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return a list of name,value pairs for all Parameters of this
+object.
+          </p>
+          <p>
+           If onlychanged is True, will only return values that are not
+equal to the default value.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.NdWidget.get_value_generator">
+          <code class="descname">
+           get_value_generator
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.get_value_generator" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.NdWidget.inspect_value">
+          <code class="descname">
+           inspect_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.inspect_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.message">
+          <code class="descname">
+           message
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.message" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.params">
+          <code class="descname">
+           params
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parameter_name=None
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.params" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return the Parameters of this class as the
+dictionary {name: parameter_object}
+          </p>
+          <p>
+           Includes Parameters from this class and its
+superclasses.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.pprint">
+          <code class="descname">
+           pprint
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=None
+          </em>
+          ,
+          <em>
+           prefix=' '
+          </em>
+          ,
+          <em>
+           unknown_value='&lt;?&gt;'
+          </em>
+          ,
+          <em>
+           qualify=False
+          </em>
+          ,
+          <em>
+           separator=''
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.pprint" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           (Experimental) Pretty printed representation that may be
+evaluated with eval. See pprint() function for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.print_param_defaults">
+          <code class="descname">
+           print_param_defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.print_param_defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the default values of all cls’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.print_param_values">
+          <code class="descname">
+           print_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.print_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the values of all this object’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.save_json">
+          <code class="descname">
+           save_json
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           frames
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="reference internal" href="http://holoviews.org/_modules/holoviews/plotting/widgets.html#NdWidget.save_json">
+           <span class="viewcode-link">
+            [source]
+           </span>
+          </a>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.save_json" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Saves frames data into a json file at the
+specified json_path, named with the widget uuid.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.script_repr">
+          <code class="descname">
+           script_repr
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=[]
+          </em>
+          ,
+          <em>
+           prefix='    '
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.script_repr" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Variant of __repr__ designed for generating a runnable script.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.set_default">
+          <code class="descname">
+           set_default
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           param_name
+          </em>
+          ,
+          <em>
+           value
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.set_default" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Set the default value of param_name.
+          </p>
+          <p>
+           Equivalent to setting param_name on the class.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.NdWidget.set_dynamic_time_fn">
+          <code class="descname">
+           set_dynamic_time_fn
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.set_dynamic_time_fn" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.NdWidget.set_param">
+          <code class="descname">
+           set_param
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.set_param" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.state_pop">
+          <code class="descname">
+           state_pop
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.state_pop" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Restore the most recently saved state.
+          </p>
+          <p>
+           See state_push() for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.state_push">
+          <code class="descname">
+           state_push
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.state_push" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Save this instance’s state.
+          </p>
+          <p>
+           For Parameterized instances, this includes the state of
+dynamically generated values.
+          </p>
+          <p>
+           Subclasses that maintain short-term state should additionally
+save and restore that state using state_push() and
+state_pop().
+          </p>
+          <p>
+           Generally, this method is used by operations that need to test
+something without permanently altering the objects’ state.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.verbose">
+          <code class="descname">
+           verbose
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.verbose" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a verbose message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.NdWidget.warning">
+          <code class="descname">
+           warning
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget.warning" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a warning, unless module variable
+warnings_as_exceptions is True, then raise an Exception
+containing the arguments.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.plotting.widgets.ScrubberWidget">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.plotting.widgets.
+        </code>
+        <code class="descname">
+         ScrubberWidget
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         plot
+        </em>
+        ,
+        <em>
+         renderer=None
+        </em>
+        ,
+        <em>
+         **params
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/plotting/widgets.html#ScrubberWidget">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference internal" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget" title="holoviews.plotting.widgets.NdWidget">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            holoviews.plotting.widgets.NdWidget
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         ScrubberWidget generates a basic animation widget with a slider
+and various play/rewind/stepping options. It has been adapted
+from Jake Vanderplas’ JSAnimation library, which was released
+under BSD license.
+        </p>
+        <p>
+         Optionally the individual plots can be exported to json, which can
+be dynamically loaded by serving the data the data for each frame
+on a simple server.
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param Dict
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            display_options
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, constant=False, default={}, instantiate=True, is_instance=True, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          The display options used to generate individual frames
+         </dd>
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            export_json
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=False, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to export
+         plots as json files, which can be dynamically loaded through
+         a callback from the slider.
+         </dd>
+        </dl>
+        <p>
+         <em>
+          param Dict
+         </em>
+         <code class="docutils literal">
+          <span class="pre">
+           CDN
+          </span>
+         </code>
+         (
+         <em>
+          allow_None=False, constant=False, default={u’jQueryUI’: u’https://code.jquery.com/ui/1.10.4/jquery-ui.min.js’, u’underscore’: u’https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js’}, instantiate=True, is_instance=True, pickle_default_value=True, precedence=None, readonly=False
+         </em>
+         )
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            extensionjs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Optional javascript extension file for a particular backend.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            json_load_path
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          If export_json is enabled the widget JS code will load the data
+         from this path, if None defaults to json_save_path. For loading
+         the data from within the notebook the path must be relative,
+         when exporting the notebook the path can be set to another
+         location like a webserver where the json files can be uploaded to.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            css
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Defines the local CSS file to be loaded for this widget.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            template
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=jsscrubber.jinja, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          The jinja2 template used to generate the html output.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            basejs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=widgets.js, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          JS file containing javascript baseclasses for the widget.
+         </dd>
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            embed
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=True, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to embed all plots in the Javascript, generating
+        a static widget not dependent on the IPython server.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            base_template
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=jsscrubber.jinja, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          The jinja2 template used to generate the html output.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            json_save_path
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=./json_figures, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          If export_json is enabled the widget will save the json
+         data to this path. If None data will be accessible via the
+         json_data attribute.
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.debug">
+          <code class="descname">
+           debug
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.debug" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a debugging statement.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.defaults">
+          <code class="descname">
+           defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return {parameter_name:parameter.default} for all non-constant
+Parameters.
+          </p>
+          <p>
+           Note that a Parameter for which instantiate==True has its default
+instantiated.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.force_new_dynamic_value">
+          <code class="descname">
+           force_new_dynamic_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.force_new_dynamic_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.get_param_values">
+          <code class="descname">
+           get_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           onlychanged=False
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.get_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return a list of name,value pairs for all Parameters of this
+object.
+          </p>
+          <p>
+           If onlychanged is True, will only return values that are not
+equal to the default value.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.get_value_generator">
+          <code class="descname">
+           get_value_generator
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.get_value_generator" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.inspect_value">
+          <code class="descname">
+           inspect_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.inspect_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.message">
+          <code class="descname">
+           message
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.message" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.params">
+          <code class="descname">
+           params
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parameter_name=None
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.params" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return the Parameters of this class as the
+dictionary {name: parameter_object}
+          </p>
+          <p>
+           Includes Parameters from this class and its
+superclasses.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.pprint">
+          <code class="descname">
+           pprint
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=None
+          </em>
+          ,
+          <em>
+           prefix=' '
+          </em>
+          ,
+          <em>
+           unknown_value='&lt;?&gt;'
+          </em>
+          ,
+          <em>
+           qualify=False
+          </em>
+          ,
+          <em>
+           separator=''
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.pprint" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           (Experimental) Pretty printed representation that may be
+evaluated with eval. See pprint() function for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.print_param_defaults">
+          <code class="descname">
+           print_param_defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.print_param_defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the default values of all cls’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.print_param_values">
+          <code class="descname">
+           print_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.print_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the values of all this object’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.save_json">
+          <code class="descname">
+           save_json
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           frames
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.save_json" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Saves frames data into a json file at the
+specified json_path, named with the widget uuid.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.script_repr">
+          <code class="descname">
+           script_repr
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=[]
+          </em>
+          ,
+          <em>
+           prefix='    '
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.script_repr" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Variant of __repr__ designed for generating a runnable script.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.set_default">
+          <code class="descname">
+           set_default
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           param_name
+          </em>
+          ,
+          <em>
+           value
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.set_default" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Set the default value of param_name.
+          </p>
+          <p>
+           Equivalent to setting param_name on the class.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.set_dynamic_time_fn">
+          <code class="descname">
+           set_dynamic_time_fn
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.set_dynamic_time_fn" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.set_param">
+          <code class="descname">
+           set_param
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.set_param" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.state_pop">
+          <code class="descname">
+           state_pop
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.state_pop" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Restore the most recently saved state.
+          </p>
+          <p>
+           See state_push() for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.state_push">
+          <code class="descname">
+           state_push
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.state_push" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Save this instance’s state.
+          </p>
+          <p>
+           For Parameterized instances, this includes the state of
+dynamically generated values.
+          </p>
+          <p>
+           Subclasses that maintain short-term state should additionally
+save and restore that state using state_push() and
+state_pop().
+          </p>
+          <p>
+           Generally, this method is used by operations that need to test
+something without permanently altering the objects’ state.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.verbose">
+          <code class="descname">
+           verbose
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.verbose" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a verbose message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.ScrubberWidget.warning">
+          <code class="descname">
+           warning
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.ScrubberWidget.warning" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a warning, unless module variable
+warnings_as_exceptions is True, then raise an Exception
+containing the arguments.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="class">
+       <dt id="holoviews.plotting.widgets.SelectionWidget">
+        <em class="property">
+         class
+        </em>
+        <code class="descclassname">
+         holoviews.plotting.widgets.
+        </code>
+        <code class="descname">
+         SelectionWidget
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         plot
+        </em>
+        ,
+        <em>
+         renderer=None
+        </em>
+        ,
+        <em>
+         **params
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/plotting/widgets.html#SelectionWidget">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Bases:
+         <a class="reference internal" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.NdWidget" title="holoviews.plotting.widgets.NdWidget">
+          <code class="xref py py-class docutils literal">
+           <span class="pre">
+            holoviews.plotting.widgets.NdWidget
+           </span>
+          </code>
+         </a>
+        </p>
+        <p>
+         Javascript based widget to select and view ViewableElement objects
+contained in an NdMapping. For each dimension in the NdMapping a
+slider or dropdown selection widget is created and can be used to
+select the html output associated with the selected
+ViewableElement type. The widget maybe set to embed all frames in
+the supplied object into the rendered html or to dynamically
+update the widget with a live IPython kernel.
+        </p>
+        <p>
+         The widget supports all current HoloViews figure backends
+including png, svg and nbagg output. To select nbagg output,
+the SelectionWidget must not be set to embed.
+        </p>
+        <p>
+         Just like the ScrubberWidget the data can be optionally saved
+to json and dynamically loaded from a server.
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param Dict
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            display_options
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, constant=False, default={}, instantiate=True, is_instance=True, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          The display options used to generate individual frames
+         </dd>
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            export_json
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=False, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to export
+         plots as json files, which can be dynamically loaded through
+         a callback from the slider.
+         </dd>
+        </dl>
+        <p>
+         <em>
+          param Dict
+         </em>
+         <code class="docutils literal">
+          <span class="pre">
+           CDN
+          </span>
+         </code>
+         (
+         <em>
+          allow_None=False, constant=False, default={u’jQueryUI’: u’https://code.jquery.com/ui/1.10.4/jquery-ui.min.js’, u’underscore’: u’https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js’}, instantiate=True, is_instance=True, pickle_default_value=True, precedence=None, readonly=False
+         </em>
+         )
+        </p>
+        <dl class="docutils">
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            extensionjs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Optional javascript extension file for a particular backend.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            json_load_path
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=None, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          If export_json is enabled the widget JS code will load the data
+         from this path, if None defaults to json_save_path. For loading
+         the data from within the notebook the path must be relative,
+         when exporting the notebook the path can be set to another
+         location like a webserver where the json files can be uploaded to.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            css
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=jsslider.css, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Defines the local CSS file to be loaded for this widget.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            template
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=jsslider.jinja, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          The jinja2 template used to generate the html output.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            basejs
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=widgets.js, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          JS file containing javascript baseclasses for the widget.
+         </dd>
+         <dt>
+          <em>
+           param Boolean
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            embed
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, bounds=(0, 1), constant=False, default=True, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          Whether to embed all plots in the Javascript, generating
+        a static widget not dependent on the IPython server.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            base_template
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=jsslider.jinja, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          The jinja2 template used to generate the html output.
+         </dd>
+         <dt>
+          <em>
+           param String
+          </em>
+          <code class="docutils literal">
+           <span class="pre">
+            json_save_path
+           </span>
+          </code>
+          (
+          <em>
+           allow_None=False, basestring=&lt;type ‘basestring’&gt;, constant=False, default=./json_figures, instantiate=False, pickle_default_value=True, precedence=None, readonly=False
+          </em>
+          )
+         </dt>
+         <dd>
+          If export_json is enabled the widget will save the json
+         data to this path. If None data will be accessible via the
+         json_data attribute.
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.debug">
+          <code class="descname">
+           debug
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.debug" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a debugging statement.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.defaults">
+          <code class="descname">
+           defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return {parameter_name:parameter.default} for all non-constant
+Parameters.
+          </p>
+          <p>
+           Note that a Parameter for which instantiate==True has its default
+instantiated.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.force_new_dynamic_value">
+          <code class="descname">
+           force_new_dynamic_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.force_new_dynamic_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.get_param_values">
+          <code class="descname">
+           get_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           onlychanged=False
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.get_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return a list of name,value pairs for all Parameters of this
+object.
+          </p>
+          <p>
+           If onlychanged is True, will only return values that are not
+equal to the default value.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.get_value_generator">
+          <code class="descname">
+           get_value_generator
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.get_value_generator" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.inspect_value">
+          <code class="descname">
+           inspect_value
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.inspect_value" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.message">
+          <code class="descname">
+           message
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.message" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.params">
+          <code class="descname">
+           params
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           parameter_name=None
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.params" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Return the Parameters of this class as the
+dictionary {name: parameter_object}
+          </p>
+          <p>
+           Includes Parameters from this class and its
+superclasses.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.pprint">
+          <code class="descname">
+           pprint
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=None
+          </em>
+          ,
+          <em>
+           prefix=' '
+          </em>
+          ,
+          <em>
+           unknown_value='&lt;?&gt;'
+          </em>
+          ,
+          <em>
+           qualify=False
+          </em>
+          ,
+          <em>
+           separator=''
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.pprint" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           (Experimental) Pretty printed representation that may be
+evaluated with eval. See pprint() function for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.print_param_defaults">
+          <code class="descname">
+           print_param_defaults
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.print_param_defaults" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the default values of all cls’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.print_param_values">
+          <code class="descname">
+           print_param_values
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.print_param_values" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print the values of all this object’s Parameters.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.save_json">
+          <code class="descname">
+           save_json
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           frames
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.save_json" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Saves frames data into a json file at the
+specified json_path, named with the widget uuid.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.script_repr">
+          <code class="descname">
+           script_repr
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           imports=[]
+          </em>
+          ,
+          <em>
+           prefix='    '
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.script_repr" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Variant of __repr__ designed for generating a runnable script.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.set_default">
+          <code class="descname">
+           set_default
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           param_name
+          </em>
+          ,
+          <em>
+           value
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.set_default" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Set the default value of param_name.
+          </p>
+          <p>
+           Equivalent to setting param_name on the class.
+          </p>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.set_dynamic_time_fn">
+          <code class="descname">
+           set_dynamic_time_fn
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.set_dynamic_time_fn" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="attribute">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.set_param">
+          <code class="descname">
+           set_param
+          </code>
+          <em class="property">
+           = &lt;functools.partial object&gt;
+          </em>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.set_param" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.state_pop">
+          <code class="descname">
+           state_pop
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.state_pop" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Restore the most recently saved state.
+          </p>
+          <p>
+           See state_push() for more details.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.state_push">
+          <code class="descname">
+           state_push
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.state_push" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Save this instance’s state.
+          </p>
+          <p>
+           For Parameterized instances, this includes the state of
+dynamically generated values.
+          </p>
+          <p>
+           Subclasses that maintain short-term state should additionally
+save and restore that state using state_push() and
+state_pop().
+          </p>
+          <p>
+           Generally, this method is used by operations that need to test
+something without permanently altering the objects’ state.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.verbose">
+          <code class="descname">
+           verbose
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.verbose" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a verbose message.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+        <dl class="method">
+         <dt id="holoviews.plotting.widgets.SelectionWidget.warning">
+          <code class="descname">
+           warning
+          </code>
+          <span class="sig-paren">
+           (
+          </span>
+          <em>
+           msg
+          </em>
+          ,
+          <em>
+           *args
+          </em>
+          ,
+          <em>
+           **kw
+          </em>
+          <span class="sig-paren">
+           )
+          </span>
+          <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.SelectionWidget.warning" title="Permalink to this definition">
+           ¶
+          </a>
+         </dt>
+         <dd>
+          <p>
+           Print msg merged with args as a warning, unless module variable
+warnings_as_exceptions is True, then raise an Exception
+containing the arguments.
+          </p>
+          <p>
+           See Python’s logging module for details of message formatting.
+          </p>
+         </dd>
+        </dl>
+       </dd>
+      </dl>
+      <dl class="function">
+       <dt id="holoviews.plotting.widgets.escape_vals">
+        <code class="descclassname">
+         holoviews.plotting.widgets.
+        </code>
+        <code class="descname">
+         escape_vals
+        </code>
+        <span class="sig-paren">
+         (
+        </span>
+        <em>
+         vals
+        </em>
+        ,
+        <em>
+         escape_numerics=True
+        </em>
+        <span class="sig-paren">
+         )
+        </span>
+        <a class="reference internal" href="http://holoviews.org/_modules/holoviews/plotting/widgets.html#escape_vals">
+         <span class="viewcode-link">
+          [source]
+         </span>
+        </a>
+        <a class="headerlink" href="holoviews.plotting.widgets.html#holoviews.plotting.widgets.escape_vals" title="Permalink to this definition">
+         ¶
+        </a>
+       </dt>
+       <dd>
+        <p>
+         Escapes a list of values to a string, converting to
+unicode for safety.
+        </p>
+       </dd>
+      </dl>
+      <hr class="docutils"/>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="http://holoviews.org/getting_started/index.html">
+       Getting started
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/user_guide/index.html">
+       User Guide
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/gallery/index.html">
+       Gallery
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/reference/index.html">
+       Reference Gallery
+      </a>
+     </li>
+     <li>
+      <a href="index.html">
+       API Docs
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="http://holoviews.org/about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="http://gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="http://twitter.com/holoviews">
+       Twitter
+      </a>
+     </li>
+     <li>
+      <a href="http://github.com/ioam/holoviews">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      2017 IOAM: Jean-Luc R. Stevens, Philipp Rudiger, and James A. Bednar
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>
